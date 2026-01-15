@@ -1,16 +1,8 @@
 services:
   - type: web
-    name: vcsmusicbot-web
+    name: telegram-music-bot
     env: python
-    plan: free
-    region: singapore
-    branch: master
-
-    buildCommand: |
-      pip install --upgrade pip
-      pip install -r requirements.txt
-
-    startCommand: |
-      bash -c "python3 st.py & python3 -m http.server $PORT"
-
-    autoDeploy: true
+    plan : free
+    pythonVersion: 3.11.8
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 -m VCsMusicBot
