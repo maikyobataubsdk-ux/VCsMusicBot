@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vcsmusicbot-web
+    env: python
+    plan: free
+    region: singapore
+    branch: main
+
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+
+    startCommand: |
+      bash -c "python3 -m VCsMusicBot & python3 -m http.server $PORT"
+
+    autoDeploy: true
