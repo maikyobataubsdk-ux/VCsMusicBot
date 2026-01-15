@@ -4,13 +4,13 @@ services:
     env: python
     plan: free
     region: singapore
-    branch: main
+    branch: master
 
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
 
     startCommand: |
-      bash -c "python3 -m VCsMusicBot & python3 -m http.server $PORT"
+      bash -c "python3 st.py & python3 -m http.server $PORT"
 
     autoDeploy: true
